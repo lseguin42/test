@@ -6,3 +6,4 @@ echo "update documentation" >> docs/docs;
 git add .;
 git commit -m "Document version. xxx";
 git push origin child_doc;
+rm -rf child_doc;
