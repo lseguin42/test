@@ -1,0 +1,20 @@
+{
+  "name": "test",
+  "version": "4.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postpublish": "./doc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lseguin42/test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lseguin42/test/issues"
+  },
+  "homepage": "https://github.com/lseguin42/test#readme"
+}
