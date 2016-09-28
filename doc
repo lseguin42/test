@@ -1,12 +1,17 @@
 #!/bin/sh
 
-rm -rf child_doc;
-git clone https://github.com/lseguin42/test.git child_doc;
-cd child_doc;
-git checkout child_doc;
-echo "update documentation" >> docs/docs;
-git add .;
-git commit -m "Document version. xxx";
-git push origin child_doc;
+PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]');
+rm -rf gh-pages;
+git clone `git config --get remote.origin.url` gh-pages;
+cd gh-pages;
+git checkout gh-pages;
 cd ..;
-rm -rf child_doc;
+
+echo "update documentation $PACKAGE_VERSION" >> gh-pages/docs/docs;
+
+cd gh-pages;
+git add .;
+git commit -m "Document version. $PACKAGE_VERSION";
+git push origin gh-pages;
+cd ..;
+rm -rf gh-pages;
